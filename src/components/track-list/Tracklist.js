@@ -60,7 +60,7 @@ function Tracklist() {
         </div>
         <div className="content__playlist playlist">
           <div>
-            {tracks.map((track) => <Track trackName={track.trackName} groupName={track.groupName} albumName={track.albumName} duration={track.duration} />)}
+            {tracks.map((track, index) => <Track key={index} trackName={track.trackName} groupName={track.groupName} albumName={track.albumName} duration={track.duration} />)}
           </div>
 
           {/* <div className="playlist__item">
