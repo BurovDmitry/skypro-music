@@ -1,6 +1,9 @@
 import './AudioPlayr.css';
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
-function AudioPlayr() {
+
+function AudioPlayr(props) {
   return (
     <div className="bar">
       <div className="bar__content">
@@ -44,11 +47,22 @@ function AudioPlayr() {
                 </div>
                 <div className="track-play__author">
                   <a className="track-play__author-link" href="http://"
-                  >Ты та...</a
                   >
+                    {props.showSkeleton ? (
+                  <Skeleton width="150px" height="20px" baseColor="#202020" />
+                ) : (
+                  "Ты та..."
+                )}
+                  </a>
                 </div>
                 <div className="track-play__album">
-                  <a className="track-play__album-link" href="http://">Баста</a>
+                  <a className="track-play__album-link" href="http://">
+                  {props.showSkeleton ? (
+                  <Skeleton width="150px" height="20px" baseColor="#202020" />
+                ) : (
+                  "Баста"
+                )}
+                </a>
                 </div>
               </div>
 
