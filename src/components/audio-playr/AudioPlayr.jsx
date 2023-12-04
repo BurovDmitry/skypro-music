@@ -2,7 +2,6 @@ import './AudioPlayr.css';
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
-
 function AudioPlayr(props) {
   return (
     <div className="bar">

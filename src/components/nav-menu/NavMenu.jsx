@@ -2,8 +2,6 @@ import { useState } from 'react';
 import './NavMenu.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-
-
 function NavMenu() {
   const [isOpen, setOpen]  = useState();
 

@@ -1,6 +1,7 @@
 import "./Tracklist.css";
 import Track from "./track/Track.jsx";
 import { tracks } from "../Tracksarray.js";
+import SearchSelection from "./SearchSelection.jsx";
 
 function Tracklist({ showSkeleton }) {
   return (
@@ -17,13 +18,8 @@ function Tracklist({ showSkeleton }) {
         />
       </div>
       <h2 className="centerblock__h2">Треки</h2>
-      <div className="centerblock__filter filter">
-        <div className="filter__title">Искать по:</div>
-        <div className="filter__button button-author _btn-text">
-          исполнителю
-        </div>
-        <div className="filter__button button-year _btn-text">году выпуска</div>
-        <div className="filter__button button-genre _btn-text">жанру</div>
+      <div>
+        <SearchSelection />
       </div>
       <div className="centerblock__content">
         <div className="content__title playlist-title">
