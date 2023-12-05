@@ -32,7 +32,6 @@ function SearchSelection() {
   };
 
   const handleMenuClose = () => {
-    // Закрываем все меню при клике вне кнопок
     setMenu1Open(false);
     setMenu2Open(false);
     setMenu3Open(false);
@@ -115,23 +114,3 @@ function SearchSelection() {
 }
 
 export default SearchSelection;
-
-// return (
-//   <div>
-//     <button onClick={() => handleButtonClick(1)}>Кнопка 1</button>
-//     {menu1Open && <div>Контекстное меню для кнопки 1</div>}
-
-//     <button onClick={() => handleButtonClick(2)}>Кнопка 2</button>
-//     {menu2Open && <div>Контекстное меню для кнопки 2</div>}
-
-//     <button onClick={() => handleButtonClick(3)}>Кнопка 3</button>
-//     {menu3Open && <div>Контекстное меню для кнопки 3</div>}
-
-//     {/* Закрываем все меню при клике вне кнопок */}
-//     {menu1Open || menu2Open || menu3Open && (
-//       <div onClick={handleMenuClose} className="overlay">
-//         {/* Подложка для закрытия меню при клике вне них */}
-//       </div>
-//     )}
-//   </div>
-// );

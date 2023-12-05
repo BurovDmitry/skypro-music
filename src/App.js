@@ -12,12 +12,10 @@ function App() {
   const [showSkeleton, setShowSkeleton] = useState(true);
 
   useEffect(() => {
-    // Задержка в 5 секунд для отображения скелета
     const timer = setTimeout(() => {
       setShowSkeleton(false);
-    }, 1000);
+    }, 2000);
 
-    // Очистка таймера при размонтировании компонента
     return () => clearTimeout(timer);
   }, []);
 
