@@ -2,7 +2,7 @@ import './Sidebar.css';
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
-function Sidebar(props) {
+function Sidebar(showSkeleton) {
   return (
     <div className="main__sidebar sidebar">
       <div className="sidebar__personal">
@@ -18,7 +18,7 @@ function Sidebar(props) {
           <div className="sidebar__item">
             <a className="sidebar__link" href="/">
 
-              {props.showSkeleton ? (
+              {showSkeleton ? (
                   <Skeleton width="250px" height="150px" baseColor="#202020" />
                 ) : (
                   <img
@@ -31,7 +31,7 @@ function Sidebar(props) {
           </div>
           <div className="sidebar__item">
             <a className="sidebar__link" href="/">
-              {props.showSkeleton ? (
+              {showSkeleton ? (
                   <Skeleton width="250px" height="150px" baseColor="#202020" />
                 ) : (
                   <img
@@ -44,7 +44,7 @@ function Sidebar(props) {
           </div>
           <div className="sidebar__item">
             <a className="sidebar__link" href="/">
-              {props.showSkeleton ? (
+              {showSkeleton ? (
                   <Skeleton width="250px" height="150px" baseColor="#202020" />
                 ) : (
                   <img

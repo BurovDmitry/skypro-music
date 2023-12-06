@@ -2,7 +2,7 @@ import "./Track.css";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
-function Track(props) {
+function Track({ showSkeleton, trackName, groupName, duration }) {
   return (
     <div className="playlist__item">
       <div className="playlist__track track">
@@ -15,10 +15,10 @@ function Track(props) {
           <div className="track__title-text">
             <a className="track__title-link" href="http://">
               <span className="track__title-span">
-                {props.showSkeleton ? (
+                {showSkeleton ? (
                   <Skeleton width="150px" height="20px" baseColor="#202020" />
                 ) : (
-                  props.trackName
+                  trackName
                 )}
               </span>
             </a>
@@ -26,19 +26,19 @@ function Track(props) {
         </div>
         <div className="track__author">
           <a className="track__author-link" href="http://">
-            {props.showSkeleton ? (
+            {showSkeleton ? (
                   <Skeleton width="150px" height="20px" baseColor="#202020" />
                 ) : (
-                  props.groupName
+                  groupName
                 )}
           </a>
         </div>
         <div className="track__album">
           <a className="track__album-link" href="http://">
-            {props.showSkeleton ? (
+            {showSkeleton ? (
                   <Skeleton width="150px" height="20px" baseColor="#202020" />
                 ) : (
-                  props.groupName
+                  groupName
                 )}
           </a>
         </div>
@@ -47,10 +47,10 @@ function Track(props) {
             <use xlinkHref="img/icon/sprite.svg#icon-like"></use>
           </svg>
           <span className="track__time-text">
-          {props.showSkeleton ? (
+          {showSkeleton ? (
                   "00:00"
                 ) : (
-                  props.duration
+                  duration
                 )}
           </span>
         </div>

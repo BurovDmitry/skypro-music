@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import AudioPlayr from './components/audio-playr/AudioPlayr.jsx';
+import AudioPlayer from './components/audio-player/AudioPlayer.jsx';
 import NavMenu from './components/nav-menu/NavMenu.jsx';
 import Sidebar from './components/sidebar/Sidebar.jsx';
 import Tracklist from './components/track-list/Tracklist.jsx';
@@ -31,11 +31,11 @@ function App() {
               <Tracklist showSkeleton={showSkeleton} />
             </div>
             <div>
-              <Sidebar showSkeleton={showSkeleton}/>
+              <Sidebar showSkeleton={showSkeleton} />
             </div>
           </main>
           <div>
-            <AudioPlayr showSkeleton={showSkeleton}/>
+            <AudioPlayer showSkeleton={showSkeleton} />
           </div>
           <footer className="footer"></footer>
         </div>
