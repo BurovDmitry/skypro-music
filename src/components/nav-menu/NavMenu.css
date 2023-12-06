@@ -28,6 +28,10 @@
   justify-content: space-between;
 }
 
+.nav_bar {
+  font-size: 26px;
+}
+
 .nav__menu {
   display: block;
   visibility: visible;
@@ -35,6 +39,11 @@
 
 .menu__list {
   padding: 18px 0 10px 0;
+  display: none;
+}
+
+.menu__list.active {
+  display: block;
 }
 
 .menu__item {

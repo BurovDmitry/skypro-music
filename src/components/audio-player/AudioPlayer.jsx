@@ -1,6 +1,8 @@
-import './AudioPlayr.css';
+import "./AudioPlayer.css";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
-function AudioPlayr() {
+function AudioPlayer({ showSkeleton }) {
   return (
     <div className="bar">
       <div className="bar__content">
@@ -43,12 +45,30 @@ function AudioPlayr() {
                   </svg>
                 </div>
                 <div className="track-play__author">
-                  <a className="track-play__author-link" href="http://"
-                  >Ты та...</a
-                  >
+                  <a className="track-play__author-link" href="http://">
+                    {showSkeleton ? (
+                      <Skeleton
+                        width="150px"
+                        height="20px"
+                        baseColor="#202020"
+                      />
+                    ) : (
+                      "Ты та..."
+                    )}
+                  </a>
                 </div>
                 <div className="track-play__album">
-                  <a className="track-play__album-link" href="http://">Баста</a>
+                  <a className="track-play__album-link" href="http://">
+                    {showSkeleton ? (
+                      <Skeleton
+                        width="150px"
+                        height="20px"
+                        baseColor="#202020"
+                      />
+                    ) : (
+                      "Баста"
+                    )}
+                  </a>
                 </div>
               </div>
 
@@ -60,9 +80,7 @@ function AudioPlayr() {
                 </div>
                 <div className="track-play__dislike _btn-icon">
                   <svg className="track-play__dislike-svg" alt="dislike">
-                    <use
-                      xlinkHref="img/icon/sprite.svg#icon-dislike"
-                    ></use>
+                    <use xlinkHref="img/icon/sprite.svg#icon-dislike"></use>
                   </svg>
                 </div>
               </div>
@@ -90,5 +108,4 @@ function AudioPlayr() {
   );
 }
 
-export default AudioPlayr;
-
+export default AudioPlayer;
