@@ -2,7 +2,7 @@ import './Sidebar.css';
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
-function Sidebar(showSkeleton) {
+function Sidebar({ showSkeleton }) {
   return (
     <div className="main__sidebar sidebar">
       <div className="sidebar__personal">
