@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./SearchSelection.css";
+import * as S from "./SearchSelection.styles";
 
 function SearchSelection() {
   const [menu1Open, setMenu1Open] = useState(false);
@@ -38,78 +38,69 @@ function SearchSelection() {
   };
 
   return (
-    <div className="centerblock__filter filter">
+    <S.CenterblockFilter>
       {(menu1Open || menu2Open || menu3Open) && (
-        <div onClick={handleMenuClose} className="overlay"></div>
+        <S.Overlay onClick={handleMenuClose}></S.Overlay>
       )}
-      <div className="filter__title">Искать по:</div>
-      <div className="filter__item">
-        <div
-          className="filter__button button-author _btn-text"
-          onClick={() => handleButtonClick(1)}
-        >
+      <S.FilterTitle>Искать по:</S.FilterTitle>
+      <S.FilterItem>
+        <S.FilterButton onClick={() => handleButtonClick(1)}>
           исполнителю
-        </div>
+        </S.FilterButton>
         {menu1Open && (
-          <div className="filter__nav ">
-            <ul className="filter__nav-list">
-              <li className="filter__nav-items">Nero</li>
-              <li className="filter__nav-items">Dynoro, Outwrk, Mr. Gee</li>
-              <li className="filter__nav-items">Ali Bakgor</li>
-              <li className="filter__nav-items">Стоункат, Psychopath</li>
-              <li className="filter__nav-items">Jade, Will Clarke, AR/C0</li>
-              <li className="filter__nav-items">Blue Foundation, Zeds Dead</li>
-              <li className="filter__nav-items">
+          <S.FilterNav>
+            <S.FilterNavList>
+              <S.FilterNavItems>Nero</S.FilterNavItems>
+              <S.FilterNavItems>Dynoro, Outwrk, Mr. Gee</S.FilterNavItems>
+              <S.FilterNavItems>Ali Bakgor</S.FilterNavItems>
+              <S.FilterNavItems>Стоункат, Psychopath</S.FilterNavItems>
+              <S.FilterNavItems>Jade, Will Clarke, AR/C0</S.FilterNavItems>
+              <S.FilterNavItems>Blue Foundation, Zeds Dead</S.FilterNavItems>
+              <S.FilterNavItems>
                 HYBIT, Mr.Black, Offer Nissim, Hi Profile
-              </li>
-              <li className="filter__nav-items">mimthaze</li>
-              <li className="filter__nav-items">Calvin Harris, Disciples</li>
-              <li className="filter__nav-items">Soindz Made in Romania</li>
-            </ul>
-          </div>
+              </S.FilterNavItems>
+              <S.FilterNavItems>mimthaze</S.FilterNavItems>
+              <S.FilterNavItems>Calvin Harris, Disciples</S.FilterNavItems>
+              <S.FilterNavItems>Soindz Made in Romania</S.FilterNavItems>
+            </S.FilterNavList>
+          </S.FilterNav>
         )}
-      </div>
+      </S.FilterItem>
 
-      <div className="filter__item">
-        <div
-          className="filter__button button-year _btn-text"
-          onClick={() => handleButtonClick(2)}
-        >
+      <S.FilterItem>
+        <S.FilterButton onClick={() => handleButtonClick(2)}>
           году выпуска
-        </div>
+        </S.FilterButton>
         {menu2Open && (
-          <div className={`filter__nav`}>
-            <ul className="filter__nav-list">
-              <li className="filter__nav-items">1998</li>
-              <li className="filter__nav-items">2000</li>
-              <li className="filter__nav-items">2002</li>
-              <li className="filter__nav-items">2004</li>
-            </ul>
-          </div>
+          <S.FilterNav>
+            <S.FilterNavList>
+              <S.FilterNavItems>1998</S.FilterNavItems>
+              <S.FilterNavItems>2000</S.FilterNavItems>
+              <S.FilterNavItems>2002</S.FilterNavItems>
+              <S.FilterNavItems>2004</S.FilterNavItems>
+            </S.FilterNavList>
+          </S.FilterNav>
         )}
-      </div>
-      <div className="filter__item">
-        <div
-          className="filter__button button-genre _btn-text"
-          onClick={() => handleButtonClick(3)}
-        >
+      </S.FilterItem>
+      <S.FilterItem>
+        <S.FilterButton onClick={() => handleButtonClick(3)}>
           жанру
-        </div>
+        </S.FilterButton>
         {menu3Open && (
-          <div className={`filter__nav`}>
-            <ul className="filter__nav-list">
-              <li className="filter__nav-items">Рок</li>
-              <li className="filter__nav-items">Хип-Хоп</li>
-              <li className="filter__nav-items">Поп-музыка</li>
-              <li className="filter__nav-items">Техно</li>
-              <li className="filter__nav-items">Инди</li>
-              <li className="filter__nav-items">Метал</li>
-              <li className="filter__nav-items">Калссика</li>
-            </ul>
-          </div>
+          <S.FilterNav>
+            <S.FilterNavList>
+              <S.FilterNavItems>Рок</S.FilterNavItems>
+              <S.FilterNavItems>Хип-Хоп</S.FilterNavItems>
+              <S.FilterNavItems>Поп-музыка</S.FilterNavItems>
+              <S.FilterNavItems>Техно</S.FilterNavItems>
+              <S.FilterNavItems>Инди</S.FilterNavItems>
+              <S.FilterNavItems>Метал</S.FilterNavItems>
+              <S.FilterNavItems>Калссика</S.FilterNavItems>
+            </S.FilterNavList>
+          </S.FilterNav>
         )}
-      </div>
-    </div>
+      </S.FilterItem>
+    </S.CenterblockFilter>
   );
 }
 
