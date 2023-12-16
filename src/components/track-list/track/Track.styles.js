@@ -60,7 +60,7 @@ stroke: #4e4e4e;
 export const TrackTitleText = styled.div`
 `
 
-export const TrackTitleLink = styled.q`
+export const TrackTitleLink = styled.p`
 font-style: normal;
 font-weight: 400;
 font-size: 16px;
