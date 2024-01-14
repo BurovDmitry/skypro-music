@@ -2,11 +2,11 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import * as S from "./Sidebar.styles";
 
-function Sidebar({ showSkeleton }) {
+function Sidebar({ showSkeleton, user }) {
   return (
     <S.MainSidebar>
       <S.SidebarPersonal>
-        <S.SidebarPersonalName>Sergey.Ivanov</S.SidebarPersonalName>
+        <S.SidebarPersonalName>{user.email}</S.SidebarPersonalName>
         <S.SidebarIcon>
           <svg alt="logout">
             <use xlinkHref="img/icon/sprite.svg#logout"></use>
@@ -16,7 +16,7 @@ function Sidebar({ showSkeleton }) {
       <S.SidebarBlock>
         <S.SidebarList>
           <S.SidebarItem>
-            <S.SidebarLink href="/">
+            <S.SidebarLink to="/category/1">
               {showSkeleton ? (
                 <Skeleton width="250px" height="150px" baseColor="#202020" />
               ) : (
@@ -28,25 +28,25 @@ function Sidebar({ showSkeleton }) {
             </S.SidebarLink>
           </S.SidebarItem>
           <S.SidebarItem>
-            <S.SidebarLink href="/">
+            <S.SidebarLink to="/category/2">
               {showSkeleton ? (
                 <Skeleton width="250px" height="150px" baseColor="#202020" />
               ) : (
                 <S.SidebarImg
                   src="img/playlist02.png"
-                  alt="day's playlist"
+                  alt="100 dance hits"
                 ></S.SidebarImg>
               )}
             </S.SidebarLink>
           </S.SidebarItem>
           <S.SidebarItem>
-            <S.SidebarLink href="/">
+            <S.SidebarLink to="/category/3">
               {showSkeleton ? (
                 <Skeleton width="250px" height="150px" baseColor="#202020" />
               ) : (
                 <S.SidebarImg
                   src="img/playlist03.png"
-                  alt="day's playlist"
+                  alt="Indie charge"
                 ></S.SidebarImg>
               )}
             </S.SidebarLink>

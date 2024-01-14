@@ -27,15 +27,17 @@ ul li {
   list-style: none;
 }
 
-@font-face {
+/* @font-face {
+  font-family: 'Roboto', sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Roboto&display=swap") format("truetype");
   font-family: "StratosSkyeng";
-  src: local("StratosSkyeng"), local("StratosSkyeng"),
-    url("../fonts/StratosSkyeng.woff2") format("woff2"),
+  src: local("StratosSkyeng"),
+    url("./fonts/") format("woff2"),
     url("../fonts/StratosSkyeng.woff") format("woff"),
-    url("../fonts/StratosSkyeng.ttf") format("truetype");
+    url("../fonts/StratosSkyeng.ttf") format("truetype"); 
   font-weight: 400;
   font-style: normal;
-}
+} */
 
 html,
 body {
