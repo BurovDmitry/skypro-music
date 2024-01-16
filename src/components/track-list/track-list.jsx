@@ -1,7 +1,7 @@
 import Track from "./track/Track.jsx";
 import { tracks } from "../Tracksarray.js";
-import SearchSelection from "./SearchSelection.jsx";
-import * as S from "./Tracklist.styles.js";
+import SearchSelection from "./search-selection.jsx";
+import * as S from "./track-list.styles.js";
 
 function Tracklist({ showSkeleton }) {
   return (

@@ -1,5 +1,5 @@
-import React from 'react';
-import * as S from './NotFound.js';
+import React from "react";
+import * as S from "./not-found.styles.js";
 
 export const NotFound = () => {
   return (

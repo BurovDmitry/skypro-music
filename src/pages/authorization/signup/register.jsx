@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Signup.css";
+import * as S from "./register.styles";
 
 const SignupPage = ({ handleSignUp }) => {
   const [email, setEmail] = useState("");
@@ -25,44 +25,43 @@ const SignupPage = ({ handleSignUp }) => {
 
   return (
     <body>
-      <div className="container-signup">
-        <div className="modal__block">
-          <form className="modal__form-login">
+      <S.ContainerSignup>
+        <S.ModalBlock>
+          <S.ModalFormLogin>
             <a href="../">
-              <div className="modal__logo">
-                <img src="../img/logo_modal.png" alt="logo" />
-              </div>
+              <S.ModalLogo>
+                <S.Img src="../img/logo_modal.png" alt="logo" />
+              </S.ModalLogo>
             </a>
-            <input
-              className="modal__input login"
+            <S.ModalInput
               value={email}
               onChange={handleEmailChange}
               type="email"
               name="login"
               placeholder="Почта"
             />
-            <input
-              className="modal__input password-first"
+            <S.ModalInput
               value={password1}
               onChange={handlePassword1Change}
               type="password"
               name="password"
               placeholder="Пароль"
             />
-            <input
-              className="modal__input password-double"
+            <S.ModalInput
               value={password2}
               onChange={handlePassword2Change}
               type="password"
               name="password"
               placeholder="Повторите пароль"
             />
-            <button className="modal__btn-signup-ent" onClick={signUp}>
-              <span>Зарегистрироваться</span>
-            </button>
-          </form>
-        </div>
-      </div>
+            <S.ModalBtnSignupEnt onClick={signUp}>
+              <S.ModalBtnSignupEntText>
+                Зарегистрироваться
+              </S.ModalBtnSignupEntText>
+            </S.ModalBtnSignupEnt>
+          </S.ModalFormLogin>
+        </S.ModalBlock>
+      </S.ContainerSignup>
     </body>
   );
 };

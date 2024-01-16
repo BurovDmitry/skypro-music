@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faBars, fas } from "@fortawesome/free-solid-svg-icons";
 import { AppRoutes } from "./routes.jsx";
-import * as S from "./App.styles.js";
-import TrackListPage from "./components/track-list-page/TrackListPage.jsx";
+import * as S from "./app.styles.js";
+import TrackListPage from "./components/track-list-page/track-list-page.jsx";
 import { useNavigate } from "react-router-dom";
 
 function App() {
@@ -66,7 +66,7 @@ function App() {
   const handleLogout = () => {
     localStorage.clear("user");
     setUser(null);
-    navigate("/signin");
+    navigate("/login");
   };
 
   useEffect(() => {

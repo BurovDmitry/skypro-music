@@ -1,10 +1,10 @@
 import React from "react";
 import "react-loading-skeleton/dist/skeleton.css";
-import Tracklist from "../track-list/Tracklist";
-import AudioPlayer from "../audio-player/AudioPlayer";
-import Sidebar from "../sidebar/Sidebar";
-import * as S from "./TrackListPage.styles";
-import NavMenu from "../nav-menu/NavMenu";
+import Tracklist from "../track-list/track-list";
+import AudioPlayer from "../audio-player/audio-player";
+import Sidebar from "../sidebar/sidebar";
+import * as S from "./track-list-page.styles";
+import NavMenu from "../nav-menu/nav-menu";
 
 const TrackListPage = ({ showSkeleton, user }) => {
   return (

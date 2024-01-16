@@ -1,5 +1,5 @@
 import React from 'react';
-import * as S from './MyPlaylist.styles'
+import * as S from './my-playlist.styles'
 
 export const MyPlaylist = () => {
   return (

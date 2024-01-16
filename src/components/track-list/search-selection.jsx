@@ -1,5 +1,5 @@
 import { useState } from "react";
-import * as S from "./SearchSelection.styles";
+import * as S from "./search-selection.styles";
 
 function SearchSelection() {
   const [menu1Open, setMenu1Open] = useState(false);

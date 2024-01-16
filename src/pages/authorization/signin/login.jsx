@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import "./Signin.css";
+import "./login.css";
 import { useNavigate } from "react-router-dom";
 
 const SigninPage = ({ handleLogin }) => {
   const navigate = useNavigate();
 
   const handleSignUp = () => {
-    navigate("/signup");
+    navigate("/register");
   };
 
   const [email, setEmail] = useState("");

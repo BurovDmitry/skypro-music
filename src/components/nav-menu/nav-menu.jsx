@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import * as S from "./NavMenu.styles.js";
+import * as S from "./nav-menu.styles.js";
 
 function NavMenu() {
   const [isOpen, setOpen] = useState(false);
