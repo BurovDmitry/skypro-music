@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import * as S from "./NavMenu.styles.js";
+import * as S from "./nav-menu.styles.js";
 
 function NavMenu() {
   const [isOpen, setOpen] = useState(false);
@@ -14,18 +14,24 @@ function NavMenu() {
       <S.NavMenu>
         <S.MenuList isOpen={isOpen}>
           <S.MenuItem>
-            <S.MenuLink href="/">Главное</S.MenuLink>
+            <S.MenuLink>
+              <S.MenuLink to="/">Главное</S.MenuLink>
+            </S.MenuLink>
           </S.MenuItem>
           <S.MenuItem>
-            <S.MenuLink href="/">Мой плейлист</S.MenuLink>
+            <S.MenuLink>
+              <S.MenuLink to="/my-playlist">Мой плейлист</S.MenuLink>
+            </S.MenuLink>
           </S.MenuItem>
           <S.MenuItem>
-            <S.MenuLink href="../signin.html">Войти</S.MenuLink>
+            <S.MenuLink to="/signout">Выйти</S.MenuLink>
           </S.MenuItem>
         </S.MenuList>
       </S.NavMenu>
     </S.MainNav>
   );
 }
+
+export { NavMenu };
 
 export default NavMenu;

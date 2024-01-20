@@ -1,6 +1,6 @@
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-import * as S from './AudioPlayer.styles'
+import * as S from './audio-player.styles'
 
 
 function AudioPlayer({ showSkeleton }) {

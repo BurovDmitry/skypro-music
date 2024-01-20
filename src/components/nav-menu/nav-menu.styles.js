@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { styled } from "styled-components";
-
+import { Link as StyledLink } from "react-router-dom";
 
 export const MainNav = styled.nav`
   background-color: #181818;
@@ -40,7 +40,7 @@ export const MenuItem = styled.li`
   margin-bottom: 16px;
 `;
 
-export const MenuLink = styled.a`
+export const MenuLink = styled(StyledLink)`
   color: #ffffff;
   font-weight: 400;
   font-size: 16px;
