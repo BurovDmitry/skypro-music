@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "./login.css";
 import { useNavigate } from "react-router-dom";
+import * as S from "./login.styles.";
 
 const SigninPage = ({ handleLogin }) => {
   const navigate = useNavigate();
@@ -27,39 +27,37 @@ const SigninPage = ({ handleLogin }) => {
 
   return (
     <body>
-      <div class="container-enter">
-        <div class="modal__block">
-          <form class="modal__form-login" action="#">
+      <S.ContainerEnter>
+        <S.ModalBlock>
+          <S.ModalFormLogin>
             <a href="../">
-              <div class="modal__logo">
-                <img src="../img/logo_modal.png" alt="logo" />
-              </div>
+              <S.ModalLogo>
+                <S.Img src="../img/logo_modal.png" alt="logo" />
+              </S.ModalLogo>
             </a>
-            <input
-              class="modal__input login"
+            <S.ModalInput
               value={email}
               onChange={handleEmailChange}
               type="text"
               name="login"
               placeholder="Почта"
             />
-            <input
-              class="modal__input password"
+            <S.ModalInput
               value={password}
               onChange={handlePasswordChange}
               type="password"
               name="password"
               placeholder="Пароль"
             />
-            <button class="modal__btn-enter" onClick={signIn}>
-              <span>Войти</span>
-            </button>
-            <button class="modal__btn-signup" onClick={handleSignUp}>
-              <span>Зарегистрироваться</span>
-            </button>
-          </form>
-        </div>
-      </div>
+            <S.ModalBtnEnter onClick={signIn}>
+              <S.ModalBtnEnterText>Войти</S.ModalBtnEnterText>
+            </S.ModalBtnEnter>
+            <S.ModalBtnSignup onClick={handleSignUp}>
+              <S.ModalBtnSignupText>Зарегистрироваться</S.ModalBtnSignupText>
+            </S.ModalBtnSignup>
+          </S.ModalFormLogin>
+        </S.ModalBlock>
+      </S.ContainerEnter>
     </body>
   );
 };
