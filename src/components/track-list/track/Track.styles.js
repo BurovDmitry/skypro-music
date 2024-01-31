@@ -58,6 +58,7 @@ stroke: #4e4e4e;
 `
 
 export const TrackTitleText = styled.div`
+cursor: pointer;
 `
 
 export const TrackTitleLink = styled.p`
