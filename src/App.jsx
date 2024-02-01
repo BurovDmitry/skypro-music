@@ -1,16 +1,16 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { useState } from "react";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faBars, fas } from "@fortawesome/free-solid-svg-icons";
 import { AppRoutes } from "./routes.jsx";
 import * as S from "./app.styles.js";
-import TrackListPage from "./components/track-list-page/track-list-page.jsx";
 import { useNavigate } from "react-router-dom";
+import AudioPlayer from "./components/audio-player/audio-player.jsx";
 
 function App() {
   const navigate = useNavigate();
   library.add(fas, faBars);
-  const [showSkeleton, setShowSkeleton] = useState(true);
+  const [track, setTrack] = useState(null);
   const [user, setUser] = useState(null);
   const registeredUsers = [
     {
@@ -22,6 +22,14 @@ function App() {
       password: "111",
     },
   ];
+
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    if (user) {
+      setUser(JSON.parse(user));
+      navigate("/");
+    }
+  }, []);
 
   const handleSignUp = (password1, password2, email) => {
     if (password1 !== password2) {
@@ -43,7 +51,6 @@ function App() {
 
     const user = {
       email,
-      password: password1,
     };
     localStorage.setItem("user", JSON.stringify(user));
     setUser(user);
@@ -52,12 +59,13 @@ function App() {
 
   const handleLogin = (password, email) => {
     const user = registeredUsers.find(
-      (u) => u.email === email || u.password === password
+      (u) => u.email === email && u.password === password
     );
     if (!user) {
       alert("Почта/пароль не верны!");
       return;
     }
+    delete user.password;
     localStorage.setItem("user", JSON.stringify(user));
     setUser(user);
     navigate("/");
@@ -67,27 +75,25 @@ function App() {
     localStorage.clear("user");
     setUser(null);
     navigate("/login");
+    setTrack(null);
   };
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowSkeleton(false);
-    }, 2000);
-
-    return () => clearTimeout(timer);
-  }, []);
+  const handleStartTrack = (track) => {
+    setTrack(track);
+  };
 
   return (
     <div className="App">
       <S.Wrapper>
         <S.Container>
           <AppRoutes
-            showSkeleton={showSkeleton}
             user={user}
+            handleStartTrack={handleStartTrack}
             handleLogin={handleLogin}
             handleLogout={handleLogout}
             handleSignUp={handleSignUp}
           />
+          <AudioPlayer track={track} />
         </S.Container>
       </S.Wrapper>
     </div>

@@ -9,6 +9,7 @@ import { NotFound } from "./pages/not-found/not-found.jsx";
 import SignupPage from "./pages/authorization/signup/register.jsx";
 
 export const AppRoutes = ({
+  handleStartTrack,
   user,
   handleLogin,
   handleLogout,
@@ -16,19 +17,16 @@ export const AppRoutes = ({
 }) => {
   return (
     <Routes>
-      <Route
-        path="/login"
-        element={<SigninPage handleLogin={handleLogin} />}
-      />
+      <Route path="/login" element={<SigninPage handleLogin={handleLogin} />} />
       <Route
         path="/register"
         element={<SignupPage handleSignUp={handleSignUp} />}
       />
       <Route element={<ProtectedRoute isAllowed={Boolean(user)} />}>
-        <Route path="/" element={<TrackListPage user={user} />} />
+        <Route path="/" element={<TrackListPage user={user} handleStartTrack={handleStartTrack} />} />
 
-        <Route path="/category/:id" element={<Category />} />
-        <Route path="/my-playlist" element={<MyPlaylist />} />
+        <Route path="/category/:id" element={<Category handleStartTrack={handleStartTrack}/>} />
+        <Route path="/my-playlist" element={<MyPlaylist handleStartTrack={handleStartTrack}/>} />
         <Route
           path="/signout"
           element={<LogoutRoute handleLogout={handleLogout} />}

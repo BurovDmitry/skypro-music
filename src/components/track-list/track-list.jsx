@@ -1,9 +1,26 @@
 import Track from "./track/Track.jsx";
-import { tracks } from "../Tracksarray.js";
 import SearchSelection from "./search-selection.jsx";
 import * as S from "./track-list.styles.js";
+import { getTracks } from "../../api.js";
+import { useEffect, useState } from "react";
 
-function Tracklist({ showSkeleton }) {
+function Tracklist({ handleShowSkeleton, showSkeleton, handleStartTrack }) {
+  const [tracks, setTracks] = useState([{}, {}, {}]);
+  const [errorMessage, setErrorMessage] = useState(false);
+
+  useEffect(() => {
+    handleShowSkeleton(true);
+    getTracks()
+      .then((tracks) => {
+        setTracks(tracks);
+        handleShowSkeleton(false);
+      })
+      .catch((error) => {
+        setErrorMessage("Не удалось загрузить плейлист, попробуйте позже");
+        console.error("Ошибка при загрузке треков:", error);
+      });
+  }, []);
+
   return (
     <S.MainCenterblock>
       <S.CenterblockSearch>
@@ -29,16 +46,16 @@ function Tracklist({ showSkeleton }) {
         </S.ContentTitle>
         <S.ContentPlaylist>
           <div>
-            {tracks.map((track, index) => (
-              <Track
-                showSkeleton={showSkeleton}
-                key={index}
-                trackName={track.trackName}
-                groupName={track.groupName}
-                albumName={track.albumName}
-                duration={track.duration}
-              />
-            ))}
+            {errorMessage
+              ? errorMessage
+              : tracks.map((track, index) => (
+                  <Track
+                    showSkeleton={showSkeleton}
+                    key={index}
+                    track={track}
+                    handleStartTrack={handleStartTrack}
+                  />
+                ))}
           </div>
         </S.ContentPlaylist>
       </S.CenterblockContent>
