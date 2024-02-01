@@ -43,6 +43,6 @@ flex-wrap: wrap;
 -webkit-box-pack: justify;
 -ms-flex-pack: justify;
 justify-content: space-between;
+cursor: pointer;
 `;
 
-// изменения
