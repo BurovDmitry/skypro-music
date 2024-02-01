@@ -1,4 +1,4 @@
-import Track from "./track/Track.jsx";
+import Track from "./track/track.jsx";
 import SearchSelection from "./search-selection.jsx";
 import * as S from "./track-list.styles.js";
 import { getTracks } from "../../api.js";
