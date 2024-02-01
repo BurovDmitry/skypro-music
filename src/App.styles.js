@@ -44,3 +44,5 @@ flex-wrap: wrap;
 -ms-flex-pack: justify;
 justify-content: space-between;
 `;
+
+// изменения

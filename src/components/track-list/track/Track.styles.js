@@ -126,3 +126,5 @@ line-height: 24px;
 text-align: right;
 color: #696969;
 `
+
+// изменения

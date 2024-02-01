@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 function LogoutRoute({ handleLogout }) {
   useEffect(() => {
@@ -10,3 +10,5 @@ function LogoutRoute({ handleLogout }) {
 }
 
 export default LogoutRoute;
+
+// изменения
