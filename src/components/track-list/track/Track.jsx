@@ -1,10 +1,11 @@
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-import * as S from "./Track.styles";
+import * as S from "./track.styles";
 
 function Track({ showSkeleton, track, handleStartTrack }) {
   const startTrack = () => {
     handleStartTrack(track);
+    console.log(track);
   };
 
   return (
@@ -63,3 +64,5 @@ function Track({ showSkeleton, track, handleStartTrack }) {
 }
 
 export default Track;
+
+

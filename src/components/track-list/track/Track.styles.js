@@ -109,6 +109,7 @@ color: #696969;
 `
 
 export const TrackTime = styled.div`
+cursor: pointer;
 `
 export const TrackTimeSvg = styled.svg`
 width: 14px;
