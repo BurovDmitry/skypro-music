@@ -2,7 +2,6 @@ import { useEffect } from "react";
 
 function LogoutRoute({ handleLogout }) {
   useEffect(() => {
-    console.log("handleLogout");
     handleLogout();
   }, [handleLogout]);
 
