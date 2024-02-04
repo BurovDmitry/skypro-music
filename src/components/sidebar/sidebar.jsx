@@ -3,7 +3,6 @@ import "react-loading-skeleton/dist/skeleton.css";
 import * as S from "./sidebar.styles";
 
 function Sidebar({ showSkeleton, user }) {
-  console.log(user);
   return (
     <S.MainSidebar>
       <S.SidebarPersonal>

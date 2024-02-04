@@ -5,7 +5,6 @@ import * as S from "./track.styles";
 function Track({ showSkeleton, track, handleStartTrack }) {
   const startTrack = () => {
     handleStartTrack(track);
-    console.log(track);
   };
 
   return (
